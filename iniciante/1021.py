@@ -1,13 +1,13 @@
 def calcular_notas(valor):
     # Notas disponíveis
-    notas = [100, 50, 20, 10, 5, 2, 1]
+    notas = [100, 50, 20, 10, 5, 2]
     quantidade_notas = {}
 
     # Calcula a quantidade de cada nota
     for nota in notas:
         quantidade_notas[nota] = valor // nota
         valor %= nota
-
+        
     return quantidade_notas
 
 def calcular_moedas(valor):
@@ -29,7 +29,6 @@ def main():
 
     quantidade_moedas = calcular_moedas(valor)
     print(valor)
-    
     
 
     # Impressão da quantidade de cada nota
