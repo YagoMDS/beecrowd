@@ -31,11 +31,14 @@ def main():
     print(valor)
 
     # Impressão da quantidade de cada nota
+    print("NOTAS:")
     for nota in [100, 50, 20, 10, 5, 2, 1, 0.5, 0.25, 0.10, 0.05, 0.01]:
-            if nota >= 1:
-                print(f"{int(quantidade_notas[nota])} nota(s) de R$ {nota:.2f}")
-            else:
-                print(f"{quantidade_notas[nota]:.0f} moeda(s) de R$ {nota:.2f}")
+        if nota >= 1:
+            print(f"{int(quantidade_notas[nota])} nota(s) de R$ {nota:.2f}")
+    print("MOEDAS")
+    for nota in [100, 50, 20, 10, 5, 2, 1, 0.5, 0.25, 0.10, 0.05, 0.01]:
+        if nota <= 1:
+            print(f"{quantidade_notas[nota]:.0f} moeda(s) de R$ {nota:.2f}")
             
 
 if __name__ == "__main__":
