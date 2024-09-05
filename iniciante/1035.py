@@ -1,24 +1,16 @@
-import math 
-
 def main():
+    a, b, c, d = input().split()
 
-    a = float(input())
-    b = float(input())
-    c = float(input())
-    
-    delta = (b*b) - (4*a*(c))
-    raizdelta = math.sqrt(delta)
+    a = int(a)
+    b = int(b)
+    c = int(c)
+    d = int(d)
 
-    if raizdelta >= 0 and a > 00:
-        x1 = (-b + (raizdelta)) / (2*a)
-        x2 = (-b - (raizdelta)) / (2*a)
-        print(delta)
-        print(x1)
-        print(x2)
+    resto = a % 2
+
+    if (b > c) and (d > a) and (c + d > a + b) and (c >= 0) and (resto == 0):
+        print("Valores aceitos")
     else:
-        print("Impossível calcular")
-
-    
-
+        print("Valores nao aceitos")
 
 main()
