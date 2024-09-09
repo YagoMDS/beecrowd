@@ -16,27 +16,35 @@ def main():
     n3 = float(n3)
     n4 = float(n4)
 
-    media = (n1 + n2 + n3 + n4) / 4
+    peso1 = 2
+    peso2 = 3
+    peso3 = 4
+    peso4 = 1
+
+    media = (n1 * peso1 + n2 * peso2 + n3 * peso3 + n4 * peso4) / 10
     
     if media >= 7.0:
-        print(f"Media: {media}'\n'Aluno aprovado.")
+        print(f"Media: {media:.1f}\nAluno aprovado.")
     
     elif media < 5.0:
-        print(f"Media: {media}'\n'Aluno reprovado.")
+        print(f"Media: {media:.1f}\nAluno reprovado.")
     
-    elif media >= 5.0 and media <= 6.9:
-        print(f"Aluno em exame.")
+    else:
+        notaexame = input()
+        notaexame = float(notaexame)
+        mediafinal = (notaexame + media) / 2
 
-    notaexame = input()
-    notaexame = float(notaexame)
-    mediafinal = (notaexame + media) / 2
-
-    if mediafinal >= 5.0:
-        
-        print(f"Aluno aprovado'\n'Media: {mediafinal:.2}")
-    elif (notaexame + media) / 2 < 5.0:
-        mediafinal = notaexame + media
-        print(f"Aluno reprovado'\n'Media: {mediafinal:.2}")
+        if mediafinal >= 5.0:
+            print(f"Media: {media:.1f}")
+            print(f"Aluno em exame.")
+            print(f"Nota do exame: {notaexame}")
+            print(f"Aluno aprovado.\nMedia final: {mediafinal}")
+        elif (notaexame + media) / 2 < 5.0:
+            mediafinal = notaexame + media
+            print(f"Media: {media:.1f}.")
+            print(f"Aluno em exame.")
+            print(f"Nota do exame:{notaexame}")
+            print(f"Aluno reprovado\nMedia final: {mediafinal}")
 main()
 
 
