@@ -14,23 +14,17 @@
 
 def main():
 
-    a, b = input().split()
-    a = int(a)
-    b = int(b)
+    a, b, c = input().split()
+    a = float(a)
+    b = float(b)
+    c = float(c)
 
-    if (a > b):
-        resto = a % b
-        if(resto == 0): 
-            print("Sao Multiplos")
-        else:
-            print("Nao sao Multiplos")
-    elif (b > a):
-        resto = b % a
-        if(resto == 0): 
-            print("Sao Multiplos")
-        else:
-            print("Nao sao Multiplos")
+    if ((a + b > c) and (a + c > b) and (b + c > a)):
+        perimetro = a + b + c
+        print(f"Perimetro = {perimetro:.1f}")
     else:
-        print("Nao sao Multiplos")
+        area = ((a + b) * c) / 2
+        print(f"Area = {area:.1f}")
+
 main()
 
