@@ -9,26 +9,27 @@
 # Mostre a seguinte mensagem: “O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)” .
 
 def main():
-    dia = 24
-    minuto = 60
-    h1, m1, h2, m2 = input().split()
-    h1 = int(h1)
-    h2 = int(h2)
-    m1 = int(m1)
-    m2 = int(m2)
+    # Lê as horas e minutos de início e fim
+    h1, m1, h2, m2 = map(int, input().split())
 
-    if (h1 >= 0 and m1 >= 0) and (h2 >= 0 and m2 >= 0):
-        if (h1 < dia and m1 < minuto) and (h2 < dia and m2 < minuto):
-            if h1 >= h2 and m1 >= m2:
-                jogo = (dia - h1) + h2
-                jogomin = m1 - m2
-                print(f"O JOGO DUROU {jogo} HORA(S) E {jogomin} MINUTOS(S)")
-            else:
-                jogo = h2 - h1
-                if m1 > m2:
-                    jogomin = (minuto - m1) + m2
-                    print(f"O JOGO DUROU {jogo} HORA(S) E {jogomin} MINUTOS(S)")
-                elif m1 < m2:
-                    jogomin = m2 - m1
-                    print(f"O JOGO DUROU {jogo} HORA(S) E {jogomin} MINUTOS(S)")
+    # Valida se as horas e minutos estão dentro do intervalo permitido
+    if (0 <= h1 < 24 and 0 <= m1 < 60) and (0 <= h2 < 24 and 0 <= m2 < 60):
+        # Calcula o total de minutos desde o início do dia para as horas e minutos fornecidos
+        inicio = h1 * 60 + m1
+        fim = h2 * 60 + m2
+
+        # Se o tempo final for menor que o tempo inicial, adiciona 24 horas (1440 minutos)
+        if fim <= inicio:
+            fim += 24 * 60  # Adiciona 24 horas em minutos
+
+        # Calcula a duração total em minutos
+        duracao = fim - inicio
+
+        # Calcula horas e minutos da duração
+        horas = duracao // 60
+        minutos = duracao % 60
+
+        print(f"O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)")
+
+# Chama a função principal
 main()
