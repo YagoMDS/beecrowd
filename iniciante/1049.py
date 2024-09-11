@@ -9,9 +9,9 @@
 
 def main():
 
-    p1 = input().split()
-    p2 = input().split()
-    p3 = input().split()
+    p1 = input().strip()
+    p2 = input().strip()
+    p3 = input().strip()
 
     if p1 == 'vertebrado':
         if p2 == 'ave':
