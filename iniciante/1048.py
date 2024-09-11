@@ -9,8 +9,6 @@
 # Acima de 2000.00                      4%
 
 
-
-
 # Leia o salário do funcionário e calcule e mostre o novo salário, bem como o valor de reajuste ganho e o índice reajustado, em percentual.
 
 # Entrada
