@@ -8,16 +8,45 @@
 # Saída
 # Na saída, deve ser apresentada a duração do evento, no seguinte formato:
 
+# Função para converter dias, horas, minutos e segundos em segundos totais
+def converter_para_segundos(dia, hora, minuto, segundo):
+    return dia * 86400 + hora * 3600 + minuto * 60 + segundo
+
+# Função para converter segundos totais de volta para dias, horas, minutos e segundos
+def converter_de_segundos(total_segundos):
+    dias = total_segundos // 86400
+    total_segundos %= 86400
+    horas = total_segundos // 3600
+    total_segundos %= 3600
+    minutos = total_segundos // 60
+    segundos = total_segundos % 60
+
+    return dias, horas, minutos, segundos
+
+
 def main():
 
-    dia_inicial = input()
-    inicio = ''.join([char for char in dia_inicial if char.isdigit()])
-    inicio = int(inicio)
+   # Ler a entrada
+    dia_inicio = int(input().split()[1])
+    hora_inicio, minuto_inicio, segundo_inicio = map(int, input().split(" : "))
+    dia_fim = int(input().split()[1])
+    hora_fim, minuto_fim, segundo_fim = map(int, input().split(" : "))
 
-    dia_final = input()
-    final = ''.join([char for char in dia_final if char.isdigit()])
-    final = int(final)
+    # Converter o tempo de início e término para segundos
+    inicio_em_segundos = converter_para_segundos(dia_inicio, hora_inicio, minuto_inicio, segundo_inicio)
+    fim_em_segundos = converter_para_segundos(dia_fim, hora_fim, minuto_fim, segundo_fim)
 
-    print(inicio, final, type(inicio))
+    # Calcular a diferença em segundos
+    duracao_em_segundos = fim_em_segundos - inicio_em_segundos
+
+    # Converter a diferença de volta para dias, horas, minutos e segundos
+    dias, horas, minutos, segundos = converter_de_segundos(duracao_em_segundos)
+
+    # Exibir o resultado
+    print(f"{dias} dia(s)")
+    print(f"{horas} hora(s)")
+    print(f"{minutos} minuto(s)")
+    print(f"{segundos} segundo(s)")
+    
 
 main()
