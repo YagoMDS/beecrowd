@@ -3,4 +3,4 @@ select
 from
     providers
 order by
-    city
+    city;
