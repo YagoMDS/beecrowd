@@ -3,7 +3,16 @@
 Este repositório contém soluções para desafios da plataforma **Beecrowd**, desenvolvidas utilizando as linguagens **Python** e **SQL**.
 
 ## 📂 Estrutura do Repositório
-📁 beecrowd/ │ ├── python/ │ ├── desafio_1001.py │ ├── desafio_1002.py │ └── ... │ ├── sql/ │ ├── desafio_2600.sql │ ├── desafio_2601.sql │ └── ... │ └── README.md
+📁 - **beecrowd/**
+  - **python/**
+    - `desafio_1001.py`
+    - `desafio_1002.py`
+    - `...`
+  - **sql/**
+    - `desafio_2600.sql`
+    - `desafio_2601.sql`
+    - `...`
+  - `README.md`
 
 ## 🚀 Tecnologias Utilizadas
 - **Python** 🐍 – Resolução de problemas de lógica, matemática, strings, entre outros.
