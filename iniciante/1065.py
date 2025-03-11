@@ -5,7 +5,6 @@
 
 # Saída
 # Imprima a mensagem conforme o exemplo fornecido, indicando a quantidade de valores pares lidos.
-
 def main():
     
     valores = []
