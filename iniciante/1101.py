@@ -8,16 +8,20 @@
 
 def main():
 
-    m = int(input())
-    n = int(input())
-    lista = []
+    while True:
+        # Recebe duas entradas do tipo inteiro 
+        m, n = map(int, input().split())
+        if (m <= 0) or (n <= 0):
+            break
+        else:
+            lista = []
 
-    if m < n: 
-        m, n = n, m
+            if m < n: 
+                m, n = n, m
 
-    for i in range(n,m+1):
-        lista.append(i)
+            for i in range(n, m + 1):
+                lista.append(i)
 
-    print(lista)
-
+            saida = " ".join(map(str, lista))
+            print(f"{saida} Sum={sum(lista)}")
 main()
